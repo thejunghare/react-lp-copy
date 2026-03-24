@@ -1,4 +1,4 @@
-export const data = [
+ const data = [
   {
     id: 1,
     item: "keyboard",
@@ -16,3 +16,9 @@ export const data = [
     item: "Headphones",
   },
 ];
+
+
+ const anotherDataset = []
+
+
+export {data, anotherDataset}
