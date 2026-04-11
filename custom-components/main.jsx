@@ -13,7 +13,3 @@ Header renders a nav bar with 3 links: Home, About, Contact
 Page render and order list of your favorite contacts.
 Footer renders following text copyright 2026 Mr. Whiskerson
  */
-
-/*
-Things to discuss - fragments
-*/

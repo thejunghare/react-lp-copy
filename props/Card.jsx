@@ -1,7 +1,8 @@
-import './Card.css';
+import './Card.css'; // importing css here
 
-export default function Card({ img, name, phone, email }) {
+export default function Card() {
     return (
+        // hard code contact card component
         <div className="card">
             <img
                 src="https://via.placeholder.com/150"

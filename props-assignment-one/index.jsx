@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client"
 const root = createRoot(document.getElementById("root"))
 
+
 /**
 Challenge: Project setup
 
@@ -22,4 +23,4 @@ Challenge: Project setup
   works if you haven't done it before.
 */
 
-root.render(/*App component rendered here*/)
+root.render()

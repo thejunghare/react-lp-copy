@@ -1,5 +1,3 @@
-import Header from "./components/Header"
-import Entry from "./components/Entry"
 
 /**
  * Challenge: pass props to the Entry component to display
@@ -12,13 +10,3 @@ import Entry from "./components/Entry"
  * component
  */
 
-export default function App() {
-    return (
-        <>
-            <Header />
-            <main className="container">
-                <Entry />
-            </main>
-        </>
-    )
-}
