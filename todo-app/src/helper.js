@@ -19,4 +19,12 @@ const handleAddTodo = (e, todo, setTodo, setTodos) => {
   });
 };
 
-export { handleAddTodo };
+const handleDelete = (id, todos, setTodos) => {
+  console.log('inside function');
+  
+  const newList = todos.filter(todo => todo.id != id);
+  setTodos(newList);
+  localStorage.setItem("todos", JSON.stringify(newList));
+};
+
+export { handleAddTodo, handleDelete };

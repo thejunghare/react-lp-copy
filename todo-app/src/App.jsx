@@ -22,7 +22,7 @@ const App = () => {
     <>
       <Form todo={todo} setTodo={setTodo} setTodos={setTodos} />
       {/* Mapping through each array i.e. each todo */}
-      <List todos={todos} />
+      <List todos={todos} setTodos={setTodos}/>
     </>
   );
 };
