@@ -12,6 +12,8 @@ const App = () => {
 
   // todos state variable will contain all our todos -> initial an empty array
   const [todos, setTodos] = useState([]);
+  const [updateMode, setUpdateMode] = useState(false);
+  const [currentId, setCurrentId] = useState(null);
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("todos")) || [];
@@ -20,9 +22,21 @@ const App = () => {
 
   return (
     <>
-      <Form todo={todo} setTodo={setTodo} setTodos={setTodos} />
+      <Form
+        todo={todo}
+        setTodo={setTodo}
+        todos={todos}
+        setTodos={setTodos}
+        updateMode={updateMode}
+      />
       {/* Mapping through each array i.e. each todo */}
-      <List todos={todos} setTodos={setTodos}/>
+      <List
+        setTodo={setTodo}
+        todos={todos}
+        setTodos={setTodos}
+        setCurrentId={setCurrentId}
+        setUpdateMode={setUpdateMode}
+      />
     </>
   );
 };

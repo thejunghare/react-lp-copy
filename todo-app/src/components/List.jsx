@@ -1,13 +1,21 @@
-import {handleDelete} from "../helper"
+import { handleDelete, handleEdit } from "../helper";
 
-function List({todos, setTodos}) {
+function List({ setTodo, todos, setTodos, setCurrentId, setUpdateMode }) {
   return (
     <>
       {todos.map((todo) => (
         <ul>
           <li key={todo.id}>{todo.title}</li>
-          <button>update</button>
-          <button  onClick={() =>handleDelete(todo.id, todos, setTodos)}>delete</button>
+          <button
+            onClick={() =>
+              handleEdit(todo, setTodo, setCurrentId, setUpdateMode)
+            }
+          >
+            update
+          </button>
+          <button onClick={() => handleDelete(todo.id, todos, setTodos)}>
+            delete
+          </button>
         </ul>
       ))}
     </>

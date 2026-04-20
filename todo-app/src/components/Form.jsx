@@ -1,6 +1,6 @@
 import { handleAddTodo } from "../helper";
 
-function Form({ e, todo, setTodo, setTodos }) {
+function Form({ e, todo, setTodo, setTodos,updateMode }) {
   return (
     <>
       <form onSubmit={(e) => handleAddTodo(e, todo, setTodo, setTodos)}>
@@ -21,7 +21,7 @@ function Form({ e, todo, setTodo, setTodos }) {
           value={todo.dateTime}
           onChange={(e) => setTodo({ ...todo, dateTime: e.target.value })}
         />
-        <button type="submit">Add todo</button>
+        <button type="submit">{updateMode? 'update':'Add todo'}</button>
       </form>
     </>
   );
