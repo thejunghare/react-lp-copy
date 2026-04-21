@@ -1,9 +1,9 @@
 import { handleAddTodo } from "../helper";
 
-function Form({ e, todo, setTodo, setTodos,updateMode }) {
+function Form({ todo, setTodo, todos, setTodos, updateMode }) {
   return (
     <>
-      <form onSubmit={(e) => handleAddTodo(e, todo, setTodo, setTodos)}>
+      <form onSubmit={(e) => handleAddTodo(e, todo, setTodo, todos, setTodos)}>
         <input
           type="text"
           placeholder="Learn React"
@@ -21,7 +21,7 @@ function Form({ e, todo, setTodo, setTodos,updateMode }) {
           value={todo.dateTime}
           onChange={(e) => setTodo({ ...todo, dateTime: e.target.value })}
         />
-        <button type="submit">{updateMode? 'update':'Add todo'}</button>
+        <button type="submit">{updateMode ? 'update' : 'Add todo'}</button>
       </form>
     </>
   );

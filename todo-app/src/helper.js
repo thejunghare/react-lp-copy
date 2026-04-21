@@ -1,21 +1,23 @@
-const handleAddTodo = (e, todo, setTodo, todos,setTodos, updateMode) => {
+const handleAddTodo = (e, todo, setTodo, todos, setTodos, updateMode) => {
   e.preventDefault(); //  stop page to refresh
   // get all the perivous todo from local storage and append users new todo the same
   let newList = []; // initially empty for todos
   if (updateMode) {
     // if true -> select the current todo
-    newList = todos.map((t) => (t.id == todo.id ? t : todo));
+    newList = todos.map((t) => (t.id == todo.id ? todo : t));
+  } else {
+
+    //else -> get the todos (new-todo)
+    // newList = JSON.parse(localStorage.getItem("todos")) || [];
+    newList = [...newList, { ...todo, id: newList.length + 1 }];
   }
-  //else -> get the todos (new-todo)
-  newList = JSON.parse(localStorage.getItem("todos")) || [];
 
   // append new-todo to old todo list
-  const newTodos = [...newList, { ...todo, id: newList.length + 1 }];
 
   // update state variable with updated list of todos
-  setTodos(newTodos);
+  setTodos(newList);
   // load in local storage
-  localStorage.setItem("todos", JSON.stringify(newTodos));
+  localStorage.setItem("todos", JSON.stringify(newList));
   //empty the input field
   setTodo({
     title: "",
