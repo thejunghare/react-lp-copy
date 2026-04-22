@@ -7,6 +7,7 @@ function List({ setTodo, todos, setTodos, setCurrentId, setUpdateMode }) {
         <ul>
           <li key={todo.id}>{todo.title}</li>
           <button
+          className="border p-2 bg-red-50"
             onClick={() =>
               handleEdit(todo, setTodo, setCurrentId, setUpdateMode)
             }

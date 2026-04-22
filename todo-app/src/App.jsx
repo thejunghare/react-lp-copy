@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import List from "./components/List";
-import Form from "./components/Form";
+import List from "./my-pages/List";
+import Form from "./my-pages/Form";
 
 const App = () => {
   // todo state variable we help us with inserating todos inside the state variable todos -> initial an empty object
