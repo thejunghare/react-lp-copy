@@ -1,4 +1,5 @@
 import { handleDelete, handleEdit } from "../helper";
+import { Button } from "@/components/ui/button"
 
 function List({ setTodo, todos, setTodos, setCurrentId, setUpdateMode }) {
   return (
@@ -6,17 +7,17 @@ function List({ setTodo, todos, setTodos, setCurrentId, setUpdateMode }) {
       {todos.map((todo) => (
         <ul>
           <li key={todo.id}>{todo.title}</li>
-          <button
-          className="border p-2 bg-red-50"
+          <Button
+          
             onClick={() =>
               handleEdit(todo, setTodo, setCurrentId, setUpdateMode)
             }
           >
             update
-          </button>
-          <button onClick={() => handleDelete(todo.id, todos, setTodos)}>
+          </Button>
+          <Button onClick={() => handleDelete(todo.id, todos, setTodos)}>
             delete
-          </button>
+          </Button>
         </ul>
       ))}
     </>

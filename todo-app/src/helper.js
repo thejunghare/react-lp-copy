@@ -9,7 +9,7 @@ const handleAddTodo = (e, todo, setTodo, todos, setTodos, updateMode) => {
 
     //else -> get the todos (new-todo)
     // newList = JSON.parse(localStorage.getItem("todos")) || [];
-    newList = [...newList, { ...todo, id: newList.length + 1 }];
+    newList = [...newList, { ...todo, id: todos.length + 1 }];
   }
 
   // append new-todo to old todo list
