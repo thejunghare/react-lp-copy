@@ -1,6 +1,10 @@
 import { handleAddTodo } from "../helper";
+import { todoContext } from "../context/TodoContext";
+import { useContext } from "react";
 
-function Form({ todo, setTodo, todos, setTodos, updateMode }) {
+function Form() {
+  const { todo, setTodo, todos, setTodos, updateMode } =
+    useContext(todoContext);
   return (
     <>
       <form onSubmit={(e) => handleAddTodo(e, todo, setTodo, todos, setTodos)}>
@@ -21,7 +25,7 @@ function Form({ todo, setTodo, todos, setTodos, updateMode }) {
           value={todo.dateTime}
           onChange={(e) => setTodo({ ...todo, dateTime: e.target.value })}
         />
-        <button type="submit">{updateMode ? 'update' : 'Add todo'}</button>
+        <button type="submit">{updateMode ? "update" : "Add todo"}</button>
       </form>
     </>
   );
