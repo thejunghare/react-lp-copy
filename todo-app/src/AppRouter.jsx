@@ -13,6 +13,7 @@ export const AppRouter = () => {
             <Link className="underline text-blue-500" to="/pricing"> See Pricing</Link>
             <Link className="underline text-blue-500" to="/profile"> See Profile</Link>
             <Link className="underline text-blue-500" to="/form"> Add Todo</Link>
+            <Link className="underline text-blue-500" to="/list"> See Todo</Link>
         </nav>
         <Routes>
           <Route path="/" element={<Home />} />

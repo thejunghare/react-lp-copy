@@ -1,4 +1,12 @@
-const handleAddTodo = (e, todo, setTodo, todos, setTodos, updateMode) => {
+const handleAddTodo = (
+  e,
+  todo,
+  setTodo,
+  todos,
+  setTodos,
+  navigate,
+  updateMode,
+) => {
   e.preventDefault(); //  stop page to refresh
   // get all the perivous todo from local storage and append users new todo the same
   let newList = [...todos]; // start with current todos
@@ -20,6 +28,11 @@ const handleAddTodo = (e, todo, setTodo, todos, setTodos, updateMode) => {
     description: "",
     dateTime: "",
   });
+
+  //  redirect to list component
+  console.log(navigate, setTodos);
+  
+  navigate("/list");
 };
 
 const handleEdit = (todo, setTodo, setCurrentId, setUpdateMode) => {

@@ -3,9 +3,14 @@ import { todoContext } from "../context/TodoContext";
 import { useContext } from "react";
 import { Button } from "@/components/ui/button";
 
+import { useNavigate } from "react-router";
+
 function Form() {
   const { todo, setTodo, todos, setTodos, updateMode } =
     useContext(todoContext);
+
+    const navigate =  useNavigate();
+    // navigate('/list')
   return (
     <>
       <section className="mx-auto w-full max-w-2xl px-4 pt-8">
@@ -18,7 +23,7 @@ function Form() {
 
         <form
           className="space-y-3 rounded-xl border bg-card p-4"
-          onSubmit={(e) => handleAddTodo(e, todo, setTodo, todos, setTodos)}
+          onSubmit={(e) => handleAddTodo(e, todo, setTodo, todos, setTodos,navigate)}
         >
           <div className="space-y-1.5">
             <label className="text-sm font-medium">Title</label>
